@@ -1,0 +1,33 @@
+name: shopware
+image:
+  name: okteto.dev/shopware
+  context: dev-ops/docker/containers/app
+  args:
+      - USER_ID=1001
+      - GROUP_ID=1001
+environment:
+  - CONTAINER_UID=1001
+  - APPLICATION_UID=1001
+  - APPLICATION_GID=1001
+command: bash
+forward:
+  - 8080:8080
+reverse:
+  - 9900:9900
+resources:
+  limits:
+    memory: "3Gi"
+    cpu: "1500m"
+persistentVolume:
+  enabled: true
+  size: 3Gi
+securityContext:
+  runAsUser: 0
+  runAsGroup: 1001
+  fsGroup: 1001
+volumes:
+ - /.composer
+ - /.npm
+sync:
+  - .:/app
+

@@ -9,10 +9,11 @@ ENV WEB_DOCUMENT_ROOT=/app/public
 ARG USER_ID
 ARG GROUP_ID
 
-RUN groupadd -r -g ${GROUP_ID} appuser || true
-RUN useradd -r -u ${USER_ID} -g ${GROUP_ID} appuser || true
+RUN groupadd -r -g ${GROUP_ID} appuser
+RUN useradd -r -u ${USER_ID} -g ${GROUP_ID} appuser
 
-RUN sed -ri -e 's!VirtualHost \*:80!VirtualHost \*:8000!g' /opt/docker/etc/httpd/vhost.conf \
+RUN pecl install xdebug && echo 'zend_extension="xdebug.so"' > /usr/local/etc/php/conf.d/xdebug.ini \
+    && sed -ri -e 's!VirtualHost \*:80!VirtualHost \*:8000!g' /opt/docker/etc/httpd/vhost.conf \
     && echo "Listen 8000" | tee -a /etc/apache2/ports.conf \
     \
     # Install Google Chrome
@@ -39,6 +40,7 @@ RUN sed -ri -e 's!VirtualHost \*:80!VirtualHost \*:8000!g' /opt/docker/etc/httpd
     && pecl install pcov-1.0.6 \
     && docker-php-ext-enable pcov
 
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 COPY php-config.ini /usr/local/etc/php/conf.d/99-docker.ini
 
 WORKDIR /app
