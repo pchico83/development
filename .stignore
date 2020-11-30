@@ -1,0 +1,7 @@
+/.git
+/.idea
+/vendor
+/bin/vendor
+/var
+/.php_cs.cache
+/node_modules
