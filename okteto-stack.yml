@@ -2,7 +2,12 @@ name: shopware
 services:
   shopware:
     public: true
-    image: shyim/shopware-classic-nginx:php72
+    image: okteto.dev/shopware
+    build:
+      context: dev-ops/docker/containers/app
+      args:
+          - USER_ID=1001
+          - GROUP_ID=1001
     environment:
       - HTTPS=on
     ports:
