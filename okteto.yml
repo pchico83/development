@@ -1,10 +1,5 @@
 name: shopware
-image:
-  name: okteto.dev/shopware
-  context: dev-ops/docker/containers/app
-  args:
-      - USER_ID=1001
-      - GROUP_ID=1001
+image: okteto.dev/shopware
 environment:
   - CONTAINER_UID=1001
   - APPLICATION_UID=1001
