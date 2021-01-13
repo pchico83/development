@@ -5,3 +5,4 @@
 /var
 /.php_cs.cache
 /node_modules
+supervisord.log
