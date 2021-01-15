@@ -35,8 +35,15 @@ If this is the first time you use your environment, run the commands below to in
 ./psh.phar install
 ```
 ```
-/opt/docker/bin/bootstrap.sh
-supervisord
+/opt/docker/bin/entrypoint.sh supervisord
 ```
 
 ## Debug from your local machine
+1. Open the project in PHP Storm
+1. Go to Preferences -> Languages and Frameworks -> PHP -> Debug and verify the following configuration settings:
+    - `Debug port`: 9003
+    - `Can Accept External Connections` is checked
+1. Press on the "Start Listening for PHP Debug Connections" button.
+1. Add a break point in the source code.
+1. Enable [debugging in your browser](https://www.jetbrains.com/help/phpstorm/zero-configuration-debugging.html#activate-debugger-on-server).
+1. Browse to the page.
