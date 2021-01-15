@@ -8,7 +8,7 @@ command: bash
 forward:
   - 8000:8000
 reverse:
-  - 9900:9900
+  - 9003:9003
 remote: 57056
 resources:
   limits:
