@@ -29,16 +29,18 @@ Connect to your remote development environment with the command below. This will
 $ okteto up
 ```
 
-If this is the first time you use your environment, run the commands below to initialize it. It'll take about 5 minutes, just enough to go grab some ☕.
+If this is the first time you use your environment, run the commands below to initialize it from the remote shell. It'll take about 5 minutes, just enough to go grab some ☕.
 
 ```console
-./psh.phar install
+root@shopware-86b5c9979c-p9m8z:/app# ./psh.phar install
 ```
-```
-/opt/docker/bin/entrypoint.sh supervisord
+
+```console
+root@shopware-86b5c9979c-p9m8z:/app# /opt/docker/bin/entrypoint.sh supervisord
 ```
 
 ## Debug from your local machine
+
 1. Open the project in PHP Storm
 1. Go to Preferences -> Languages and Frameworks -> PHP -> Debug and verify the following configuration settings:
     - `Debug port`: 9003
