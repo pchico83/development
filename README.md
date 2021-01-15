@@ -35,6 +35,8 @@ If this is the first time you use your environment, run the commands below to in
 root@shopware-86b5c9979c-p9m8z:/app# ./psh.phar install
 ```
 
+Run the following command from the remote shell to start shopware:
+
 ```console
 root@shopware-86b5c9979c-p9m8z:/app# /opt/docker/bin/entrypoint.sh supervisord
 ```
