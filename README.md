@@ -29,10 +29,14 @@ Connect to your remote development environment with the command below. This will
 $ okteto up
 ```
 
-If this is the first time you use your environment, run the command below to initialize it:
+If this is the first time you use your environment, run the commands below to initialize it. It'll take about 5 minutes, just enough to go grab some ☕.
 
+```console
+./psh.phar install
 ```
-bin/console setup
+```
+/opt/docker/bin/bootstrap.sh
+supervisord
 ```
 
-
+## Debug from your local machine
