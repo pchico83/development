@@ -10,13 +10,9 @@ forward:
 reverse:
   - 9003:9003
 remote: 57056
-resources:
-  limits:
-    memory: "3Gi"
-    cpu: "1500m"
 persistentVolume:
   enabled: true
-  size: 3Gi
+  size: 10Gi
 securityContext:
   runAsUser: 0
   runAsGroup: 1001
@@ -26,4 +22,3 @@ volumes:
  - /.npm
 sync:
   - .:/app
-

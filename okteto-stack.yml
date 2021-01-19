@@ -6,8 +6,8 @@ services:
     build:
       context: dev-ops/docker/containers/app
       args:
-          - USER_ID=1001
-          - GROUP_ID=1001
+        - USER_ID=1001
+        - GROUP_ID=1001
     environment:
       - HTTPS=on
     ports:
@@ -26,7 +26,7 @@ services:
     volumes:
       - /var/lib/mysql
     resources:
-      storage: 2Gi
+      storage: 10Gi
 
   mailhog:
     public: true
