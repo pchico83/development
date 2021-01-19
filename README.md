@@ -21,6 +21,8 @@ Second, deploy your development instance of Shopware:
 okteto stack deploy
 ```
 
+or deploy the Git repository https://github.com/pchico83/development from the Okteto UI.
+
 ## Develop with Okteto
 
 Connect to your remote development environment with the command below. This will keep you code synchronized, and open a remote shell into the development container.
