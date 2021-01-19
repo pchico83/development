@@ -6,16 +6,16 @@ Use this setup for developing directly on Shopware 6 or for developing plugins f
 The installation guide, together with the complete documentation, is available at [docs.shopware.com](https://docs.shopware.com/en/shopware-platform-dev-en/getting-started).
 
 
-## Deploy your development environment on Okteto Cloud
+## Deploy your development environment on Okteto
 
-First, download your Okteto Cloud credentials into your local machine:
+First, download your Okteto credentials into your local machine:
 
 ```console
-$ okteto login
+$ okteto login https://shopworks.okteto.dev/
 $ okteto namespace
 ```
 
-Second, deploy your dev copy of Shopware:
+Second, deploy your development instance of Shopware:
 
 ```console
 okteto stack deploy
